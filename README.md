@@ -46,12 +46,17 @@ func main() {
 
 	// fmt.Println(m)
 }
-
 ```
+
+## TODO
+
+  * Windows
+  * Darwin
+
 ## Self-Promotion
 
-Like komanda-cli? Follow the repository on
-[GitHub](https://github.com/mephux/komanda-cli) and if
+Like memory? Follow the repository on
+[GitHub](https://github.com/mephux/memory) and if
 you would like to stalk me, follow [mephux](http://dweb.io/) on
 [Twitter](http://twitter.com/mephux) and
 [GitHub](https://github.com/mephux).

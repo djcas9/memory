@@ -14,8 +14,6 @@ package memory
 // struct iovec remote[1];
 // ssize_t nread;
 //
-//
-//
 // local[0].iov_base = buf;
 // local[0].iov_len = bufSize;
 // remote[0].iov_base = (void *) addr;
