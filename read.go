@@ -22,7 +22,7 @@ package memory
 // nread = process_vm_readv(pid, local, 1, remote, 1, 0);
 // //printf("XXXX  READ %d from pid %d at %x \n", nread, pid, (void *)addr);
 // if (nread <= 0) {
-//  printf("XXX ERROR IS %s\n", strerror(errno));
+//  //printf("XXX ERROR IS %s\n", strerror(errno));
 // }
 // return nread;
 // }
@@ -46,7 +46,6 @@ func (p *Process) Read(addr int64, bufSize uint64, result interface{}) error {
 
 		b := bytes.NewReader(outBuf)
 
-		fmt.Println("XXX %v", outBuf)
 		if err := binary.Read(b, binary.LittleEndian, result); err != nil {
 			return fmt.Errorf("Could not read from bytes: %s", err)
 		}
@@ -67,7 +66,6 @@ func (p *Process) ReadInt64(addr int64) (int64, error) {
 		return 0, fmt.Errorf("Could not read int64: %s", err)
 	}
 
-	fmt.Println("XXX GOT VAL", result)
 	return result, nil
 }
 

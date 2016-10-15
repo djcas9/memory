@@ -24,7 +24,7 @@ package memory
 // //printf("XXXX  WRITE %d %d to pid %d at %x \n", bufSize, *(int *)buf, pid, (void *)addr);
 // nread = process_vm_writev(pid, local, 1, remote, 1, 0);
 // if (nread <= 0) {
-//  printf("XXX WRITE ERROR IS %s\n", strerror(errno));
+//  //printf("XXX WRITE ERROR IS %s\n", strerror(errno));
 // }
 // return nread;
 // }
@@ -64,4 +64,25 @@ func (p *Process) WriteInt64(addr int64, input int64) error {
 func (p *Process) WriteInt32(addr int64, input int32) error {
 	inBufSize := uint64(4)
 	return p.Write(addr, inBufSize, &input)
+}
+
+func (p *Process) WriteFloat32(addr int64, input float32) error {
+	inBufSize := uint64(4)
+	return p.Write(addr, inBufSize, &input)
+}
+
+func (p *Process) WriteFloat64(addr int64, input float64) error {
+	inBufSize := uint64(4)
+	return p.Write(addr, inBufSize, &input)
+}
+
+func (p *Process) WriteBool(addr int64, input bool) error {
+	var result int8
+	inBufSize := uint64(1)
+
+	if input {
+		result = 1
+	}
+
+	return p.Write(addr, inBufSize, &result)
 }
