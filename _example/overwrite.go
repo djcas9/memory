@@ -29,8 +29,4 @@ func main() {
 	i, err = m.ReadInt32(addr)
 
 	fmt.Println(i, err)
-
-	// m := C.read(pid, 0x10000)
-
-	// fmt.Println(m)
 }
