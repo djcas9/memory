@@ -1,5 +1,5 @@
 # memory
-Linux memory read/write lib using process_vm_readv and process_vm_writev.
+Linux process memory read/write lib using process_vm_readv and process_vm_writev.
 
 ## Features
 
