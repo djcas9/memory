@@ -82,6 +82,30 @@ func (p *Process) ReadInt32(addr int64) (int32, error) {
 	return result, nil
 }
 
+func (p *Process) ReadFloat32(addr int64) (float32, error) {
+	var result float32
+	inBufSize := uint64(4)
+	
+	err := p.Read(addr, inBufSize, &result)
+	if err != nil {
+		return 0, fmt.Errorf("Could not read float32: %s", err)
+	}
+	
+	return result, nil
+}
+
+func (p *Process) ReadFloat64(addr int64) (float64, error) {
+	var result float64
+	inBufSize := uint64(4)
+	
+	err := p.Read(addr, inBufSize, &result)
+	if err != nil {
+		return 0, fmt.Errorf("Could not read float64: %s", err)
+	}
+	
+	return result, nil
+}
+
 func (p *Process) ReadBool(addr int64) (bool, error) {
 	var result int8
 	inBufSize := uint64(1)
